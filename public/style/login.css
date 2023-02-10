@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background{
+    width: 100%;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+main .screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 85%;
+    background-color: #1002026e;
+}
+
+main h1{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    color: white;
+    font-weight: normal;
+    font-size: 5rem; 
+    margin-bottom: 2em;
+}
+
+.logIn{
+    opacity: 0;
+}
+
+.formControl label{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2rem;
+}
+
+main .btn2{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2rem;
+    color: white;
+    padding: 10px 50px;
+    background: #815B5B;
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.15), -5px 0px 0px rgba(0, 0, 0, 0.25), inset 0px 5px 0px rgba(255, 255, 255, 0.45), inset -5px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.loginText{
+    font-size: 4rem;
+    margin-bottom: -5px;
+}
+
+.formControl label{
+    display: block;
+    color: white;
+}
+
+
+.formControl input[type = text], 
+.formControl input[type = password]{
+    width: 400px;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #815b5b93;
+    border-color: transparent;
+}
+
+button[type = submit]{
+    margin-top: 20px;
+}
+
+.formControl2{
+    display: flex;
+}
+.formControl2 input[type = checkbox]{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.formControl2 label{
+    font-family: PerfectDos, Alkhemikal;
+    color: darkgoldenrod;
+    display: inline-block;
+    width: 400px;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+p a{
+    color: darkgoldenrod;
+    font-family: PerfectDos, Alkhemikal;
+}
+
+.preloader{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}

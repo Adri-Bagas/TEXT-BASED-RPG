@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background{
+    width: 100%;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+main .screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 85%;
+    background-color: #1002026e;
+}
+
+main h1{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    color: white;
+    font-weight: normal;
+    font-size: 5rem; 
+    margin-bottom: 0.5em;
+}
+
+.btn{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    display: none;
+    font-size: 2rem;
+    color: white;
+    width: 40%;
+    padding: 10px 50px;
+    background: #815B5B;
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.15), -5px 0px 0px rgba(0, 0, 0, 0.25), inset 0px 5px 0px rgba(255, 255, 255, 0.45), inset -5px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn:hover{
+    background: #594545;
+}
+
+.text2{
+    display: none;
+}
+.text3{
+    display: none;
+}
+.text4{
+    display: none;
+}
+.choice{
+    display: none;
+    align-items: center;
+}
+
+.preloader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+.choicebtn{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.formStat{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    row-gap: 30px;
+    grid-template-areas: 
+    "header"
+    "footer";
+    width: 50%;
+}
+
+.formStat div{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "a b c d";
+}
+
+.formStat label{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    color: white;
+    font-weight: normal;
+    font-size: 2rem; 
+    display: inline-block;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.look{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formStat input[type = number]{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2em;
+    text-align: center;
+    padding: 5px;
+    width: 80px;
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+    color: white;
+}
+
+.statspread p{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2em;
+    color: white;
+}
+
+.statspread .points{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2em;
+    text-align: center;
+    padding: 5px;
+    width: 80px;
+    background-color: transparent;
+    border: transparent;
+    outline: transparent;
+    color: goldenrod;
+}
+
+.formStat .stats button{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2rem;
+    color: white;
+    width: 80px;
+    padding: 10px;
+    background: #815B5B;
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.15), -5px 0px 0px rgba(0, 0, 0, 0.25), inset 0px 5px 0px rgba(255, 255, 255, 0.45), inset -5px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.formStat button{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2rem;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    background: #815B5B;
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.15), -5px 0px 0px rgba(0, 0, 0, 0.25), inset 0px 5px 0px rgba(255, 255, 255, 0.45), inset -5px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+main button:hover{
+    background: #594545;
+}
+
+.charaData{
+    flex-direction: column;
+    align-items: center;
+}
+
+.charaData .dataSets{
+    display: grid;
+    grid-template-rows: auto;
+    column-gap: 300px;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "a b";
+}
+
+.charaData .dataSets .genericData, 
+.charaData .dataSets .statsData{
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "a b c";
+}
+
+.charaData p{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2em;
+    color: white;
+}
+
+.start{
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    font-size: 2rem;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    margin-top: 50px;
+    background: #815B5B;
+    box-shadow: 0px 7px 0px rgba(0, 0, 0, 0.15), -5px 0px 0px rgba(0, 0, 0, 0.25), inset 0px 5px 0px rgba(255, 255, 255, 0.45), inset -5px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+.part2{
+    display: none;
+    text-align: center;
+}
+
+.text9, .text10, .text11, .text12, .text13, .text14{
+    display: none;
+    font-family: Alagard, VeniceClassic, Alkhemikal;
+    color: white;
+    font-weight: normal;
+    font-size: 5rem; 
+    margin-bottom: 0.5em;
+    text-align: center;
+}
