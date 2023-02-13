@@ -9,7 +9,6 @@ use App\Http\Controllers\ProbabilityController;
 use App\Http\Controllers\ScenarioController;
 use App\Http\Controllers\StartSceneController;
 use App\Http\Controllers\UserCharacterController;
-use App\Models\CharaEquipment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -103,3 +102,6 @@ Route::post('equip/item', [CharaEquipmentController::class, 'equipItem']);
 Route::post('start/scenes', [StartSceneController::class, 'showStartScenes']);
 //GET SCENES
 Route::post('scene/call', [ScenarioController::class, 'callScene']);
+
+//PICK1
+Route::get('picked1/{id}', [ScenarioController::class, 'picked1']);

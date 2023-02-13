@@ -15,6 +15,7 @@ class DataItem extends Model implements HasMedia
     protected $fillable = [
         'name',
         'type',
+        'rarity',
         'str_boost',
         'int_boost',
         'dex_boost',

@@ -38,7 +38,45 @@ class ProbabilityController extends Controller
                 return $results[$index];
             }
         }
+    }
 
+    public function checkProbWithStats($stats, $req){
+
+        $chance = ( $stats / $req ) * 100;
+
+        $falseChance = 100 - $chance;
+
+        $probabilities = [$chance, $falseChance];
+        $results = [true, false];
+
+        $total = array_sum($probabilities);
+        $random_num = mt_rand(1, $total);
+        $counter = 0;
+        foreach($probabilities as $index=>$value)
+        {
+            $counter += $value;
+                if($counter > $random_num)
+            {
+                return $results[$index];
+            }
+        }
+    }
+
+    public function levelUpInt(){
+        $probabilities = [65, 23, 10, 2];
+        $results = [ 1 , 2 , 3, 4];
+
+        $total = array_sum($probabilities);
+        $random_num = mt_rand(1, $total);
+        $counter = 0;
+        foreach($probabilities as $index=>$value)
+        {
+            $counter += $value;
+                if($counter > $random_num)
+            {
+                return $results[$index];
+            }
+        }
     }
 
 

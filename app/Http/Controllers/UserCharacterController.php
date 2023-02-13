@@ -94,7 +94,6 @@ class UserCharacterController extends Controller
                 'level' => 1,
                 'exp_count' => 0
             ]);
-
             if($update){
 
                 $data =  UserCharacter::find(auth()->id());

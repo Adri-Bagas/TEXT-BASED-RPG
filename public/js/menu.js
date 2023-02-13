@@ -179,18 +179,18 @@ function addScene(data){
 
     let btnSpace = document.getElementById("choice")
 
-    btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked1()" class="choice1">${data.scene.choice1}</button>`
+    btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked1(${data.scene.id})" class="choice1">${data.scene.choice1}</button>`
 
     if(data.scene.choice2 != null){
-    btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked2()" class="choice2">${data.scene.choice2}</button>`
+    btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked2(${data.scene.id})" class="choice2">${data.scene.choice2}</button>`
     }
 
     if(data.scene.choice3 != null){
-        btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked3()" class="choice3">${data.scene.choice3}</button>`
+        btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked3(${data.scene.id})" class="choice3">${data.scene.choice3}</button>`
     }
 
     if(data.scene.choice4 != null){
-        btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked4()" class="choice4">${data.scene.choice4}</button>`
+        btnSpace.innerHTML += `<button class="btnItem w-200px m-auto" onclick="picked4(${data.scene.id})" class="choice4">${data.scene.choice4}</button>`
     }
 
 
@@ -203,8 +203,22 @@ function addScene(data){
         delay: (elem, index) => index * 100
     })
 
+}
 
+function picked1(id){
+    $.ajax({
+        type: "POST",
+        url: appUrl + '/picked1',
+        data: { id: id },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (response) {
+            if(response.success){
 
+            }
+        }
+    });
 }
 
 // var colors = [

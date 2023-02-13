@@ -24,7 +24,8 @@ class UserCharacter extends Model
         'max_mana',
         'current_mana',
         'level',
-        'exp_count'
+        'exp_count',
+        'exp_cap'
     ];
 
     public function user(){
