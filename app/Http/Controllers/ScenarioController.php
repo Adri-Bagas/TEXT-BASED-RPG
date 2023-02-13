@@ -43,15 +43,1051 @@ class ScenarioController extends Controller
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
             }else{
                 $probability = new ProbabilityController;
                 $result = $probability->checkProbWithStats($user->level, $scene->min1);
 
                 if($result){
-                    return $this->chestCheck($scene, 'response1');
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
                 }
                 else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req1 == "STR"){
+            if($user->userChara->strength >= $scene->min1){
+                if($scene->cons1 == "CHEST"){
+                    return $this->chestCheck($scene, 'response1');
+                }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min1);
 
+                if($result){
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req1 == "DEX"){
+            if($user->userChara->dexterity >= $scene->min1){
+                if($scene->cons1 == "CHEST"){
+                    return $this->chestCheck($scene, 'response1');
+                }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+
+                if($result){
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req1 == "INT"){
+            if($user->userChara->intelligence >= $scene->min1){
+                if($scene->cons1 == "CHEST"){
+                    return $this->chestCheck($scene, 'response1');
+                }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+
+                if($result){
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req1 == "DEF"){
+            if($user->userChara->defense >= $scene->min1){
+                if($scene->cons1 == "CHEST"){
+                    return $this->chestCheck($scene, 'response1');
+                }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+
+                if($result){
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        } 
+        else if($scene->req1 == "CHAR"){
+            if($user->userChara->charisma >= $scene->min1){
+                if($scene->cons1 == "CHEST"){
+                    return $this->chestCheck($scene, 'response1');
+                }
+                if($scene->cons1 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "MANA"){
+                    return $this->manaCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "EXP"){
+                    return $this->expCheck($scene, 'effect1', 'response1');
+                }
+                if($scene->cons1 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect1', 'response1');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+
+                if($result){
+                    if($scene->cons1 == "CHEST"){
+                        return $this->chestCheck($scene, 'response1');
+                    }
+                    if($scene->cons1 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "MANA"){
+                        return $this->manaCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "EXP"){
+                        return $this->expCheck($scene, 'effect1', 'response1');
+                    }
+                    if($scene->cons1 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect1', 'response1');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+    }
+
+    public function picked2($id){
+        $scene = Scenario::find($id);
+
+        $user = auth()->user();
+
+        if($scene->req2 == "LEVEL"){
+            if($user->userChara->level >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req2 == "STR"){
+            if($user->userChara->strength >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req2 == "DEX"){
+            if($user->userChara->dexterity >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req2 == "INT"){
+            if($user->userChara->intelligence >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req2 == "DEF"){
+            if($user->userChara->defense >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        } 
+        else if($scene->req2 == "CHAR"){
+            if($user->userChara->charisma >= $scene->min2){
+                if($scene->cons2 == "CHEST"){
+                    return $this->chestCheck($scene, 'response2');
+                }
+                if($scene->cons2 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "MANA"){
+                    return $this->manaCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "EXP"){
+                    return $this->expCheck($scene, 'effect2', 'response2');
+                }
+                if($scene->cons2 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect2', 'response2');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+
+                if($result){
+                    if($scene->cons2 == "CHEST"){
+                        return $this->chestCheck($scene, 'response2');
+                    }
+                    if($scene->cons2 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "MANA"){
+                        return $this->manaCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "EXP"){
+                        return $this->expCheck($scene, 'effect2', 'response2');
+                    }
+                    if($scene->cons2 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect2', 'response2');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+    }
+
+    public function picked3($id){
+        $scene = Scenario::find($id);
+
+        $user = auth()->user();
+
+        if($scene->req3 == "LEVEL"){
+            if($user->userChara->level >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req3 == "STR"){
+            if($user->userChara->strength >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req3 == "DEX"){
+            if($user->userChara->dexterity >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req3 == "INT"){
+            if($user->userChara->intelligence >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req3 == "DEF"){
+            if($user->userChara->defense >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        } 
+        else if($scene->req3 == "CHAR"){
+            if($user->userChara->charisma >= $scene->min3){
+                if($scene->cons3 == "CHEST"){
+                    return $this->chestCheck($scene, 'response3');
+                }
+                if($scene->cons3 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "MANA"){
+                    return $this->manaCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "EXP"){
+                    return $this->expCheck($scene, 'effect3', 'response3');
+                }
+                if($scene->cons3 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect3', 'response3');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+
+                if($result){
+                    if($scene->cons3 == "CHEST"){
+                        return $this->chestCheck($scene, 'response3');
+                    }
+                    if($scene->cons3 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "MANA"){
+                        return $this->manaCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "EXP"){
+                        return $this->expCheck($scene, 'effect3', 'response3');
+                    }
+                    if($scene->cons3 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect3', 'response3');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+    }
+
+    public function picked4($id){
+        $scene = Scenario::find($id);
+
+        $user = auth()->user();
+
+        if($scene->req4 == "LEVEL"){
+            if($user->userChara->level >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req4 == "STR"){
+            if($user->userChara->strength >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req4 == "DEX"){
+            if($user->userChara->dexterity >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req4 == "INT"){
+            if($user->userChara->intelligence >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        }
+        else if($scene->req4 == "DEF"){
+            if($user->userChara->defense >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
+                }
+            }
+        } 
+        else if($scene->req4 == "CHAR"){
+            if($user->userChara->charisma >= $scene->min4){
+                if($scene->cons4 == "CHEST"){
+                    return $this->chestCheck($scene, 'response4');
+                }
+                if($scene->cons4 == "HEALTH"){
+                    return $this->healthCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "MANA"){
+                    return $this->manaCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "EXP"){
+                    return $this->expCheck($scene, 'effect4', 'response4');
+                }
+                if($scene->cons4 == "ITEM"){
+                    return $this->itemCheck($scene, 'effect4', 'response4');
+                }
+            }else{
+                $probability = new ProbabilityController;
+                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+
+                if($result){
+                    if($scene->cons4 == "CHEST"){
+                        return $this->chestCheck($scene, 'response4');
+                    }
+                    if($scene->cons4 == "HEALTH"){
+                        return $this->healthCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "MANA"){
+                        return $this->manaCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "EXP"){
+                        return $this->expCheck($scene, 'effect4', 'response4');
+                    }
+                    if($scene->cons4 == "ITEM"){
+                        return $this->itemCheck($scene, 'effect4', 'response4');
+                    }
+                }
+                else{
+                    return $this->failedCheck($scene);
                 }
             }
         }
@@ -98,7 +1134,7 @@ class ScenarioController extends Controller
             return $this->expCheck($scene, 'failed_eff', 'failed_text');
         }
         else if($scene->failed_cons == "ITEM"){
-            
+            return $this->failedCheck($scene, 'failed_eff', 'failed_text');
         }
     }
 
@@ -228,5 +1264,28 @@ class ScenarioController extends Controller
             'response' => $scene->$response,
             'response_eff' => 'You get '. $scene->eff .' Exp' 
         ]);
+    }
+
+    public function itemCheck($scene, $eff, $response){
+
+        $check = DataItem::find($eff);
+
+        if($check){
+            $create = CharaInventory::create([
+            'user_characters_id' => auth()->user()->userChara->id,
+            'data_items_id' => $eff,
+            ]);
+
+        $charaInventoryData = auth()->user()->userChara->inventory;
+
+        return response()->json([
+                'success' => true,
+                'type' => 'CHEST',
+                'inventory_data' => $charaInventoryData,
+                'response' => $scene->$response,
+                'response_eff' => 'You Got '. $check->name .' <img src="'. $check->media->first->getUrl() . '" >'
+            ]);
+        }
+
     }
 }
