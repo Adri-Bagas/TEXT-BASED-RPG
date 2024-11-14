@@ -16,6 +16,7 @@ class CharaInventoryController extends Controller
             return response()->json([
                 'pesan' => 'Ini data nya',
                 'item' => $itemData,
+                'status' => $model->status,
                 'img' => $itemData->media->first()->getUrl(),
                 'inventory' => $model
             ], 200);

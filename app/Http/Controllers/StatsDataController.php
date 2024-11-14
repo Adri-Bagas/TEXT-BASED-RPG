@@ -212,7 +212,7 @@ class StatsDataController extends Controller
             'totDEF' => $totDEF,
             'totINT' => $totINT,
             'totDEX' => $totDEX,
-            'totChar' => $totChar,
+            'totCHAR' => $totChar,
             'totHP' => $totHP,
             'totMana' => $totMana
         );

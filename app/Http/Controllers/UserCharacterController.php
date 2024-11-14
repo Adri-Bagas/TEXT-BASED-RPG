@@ -18,9 +18,7 @@ class UserCharacterController extends Controller
     public function charaCreation(){
 
         $races = Race::all();
-
         $classes = CharaClass::all();
-
         return view('chara-make', compact('races', 'classes'));
     }
 
@@ -92,7 +90,8 @@ class UserCharacterController extends Controller
                 'max_mana' => 20,
                 'current_mana' => 20,
                 'level' => 1,
-                'exp_count' => 0
+                'exp_count' => 0,
+                'status' => 'ALIVE'
             ]);
             if($update){
 
@@ -125,7 +124,7 @@ class UserCharacterController extends Controller
                         'int' => $data->intelligence,
                         'dex' => $data->dexterity,
                         'def' => $data->defense,
-                        'char' => $data->charisma
+                        'char' => $data->charisma,
                     ]
                 ], 200);
             }
@@ -138,5 +137,44 @@ class UserCharacterController extends Controller
         return response()->json([
             'message' => 'User Not Found'
         ], 404);
+    }
+
+    public function checkStatus(){
+        $userChara = auth()->user()->userChara ;
+
+        if($userChara->status == "DEATH"){
+            return response()->json([
+                'status' => $userChara->status
+            ]);
+        }
+
+        return response()->json([
+            'status' => $userChara->status
+        ]);
+    }
+
+    public function resetChara(){
+        $userChara = auth()->user()->userChara;
+
+        $equipment = $userChara->equipment;
+
+        $invento = $userChara->inventory;
+
+        $equipment->update([
+            'head' => null,
+            'body' => null,
+            'weapon' => null,
+            'accessories1' => null,
+            'accessories2' => null,
+            'foot' => null
+        ]);
+
+        foreach($invento as $item){
+            $item->delete();
+        }
+
+        return response()->json([
+            'success' => true,
+        ]);
     }
 }

@@ -6,6 +6,7 @@ use App\Models\CharaInventory;
 use App\Models\DataItem;
 use App\Models\Scenario;
 use Illuminate\Http\Request;
+use Laravel\Ui\Presets\React;
 
 class ScenarioController extends Controller
 {
@@ -33,10 +34,15 @@ class ScenarioController extends Controller
 
     }
 
-    public function picked1($id){
+    public function picked1(Request $request){
+        $id = $request->id;
         $scene = Scenario::find($id);
 
         $user = auth()->user();
+
+        $bruh = new StatsDataController;
+
+        $datas = $bruh->statsCheck();
 
         if($scene->req1 == "LEVEL"){
             if($user->userChara->level >= $scene->min1){
@@ -82,7 +88,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req1 == "STR"){
-            if($user->userChara->strength >= $scene->min1){
+            if($datas['totSTR'] >= $scene->min1){
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
@@ -100,7 +106,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+                $result = $probability->checkProbWithStats($datas['totSTR'], $scene->min1);
 
                 if($result){
                     if($scene->cons1 == "CHEST"){
@@ -125,7 +131,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req1 == "DEX"){
-            if($user->userChara->dexterity >= $scene->min1){
+            if($datas['totDEX'] >= $scene->min1){
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
@@ -143,7 +149,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+                $result = $probability->checkProbWithStats($datas['totDEX'], $scene->min1);
 
                 if($result){
                     if($scene->cons1 == "CHEST"){
@@ -168,7 +174,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req1 == "INT"){
-            if($user->userChara->intelligence >= $scene->min1){
+            if($datas['totINT'] >= $scene->min1){
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
@@ -186,7 +192,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+                $result = $probability->checkProbWithStats($datas['totINT'], $scene->min1);
 
                 if($result){
                     if($scene->cons1 == "CHEST"){
@@ -211,7 +217,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req1 == "DEF"){
-            if($user->userChara->defense >= $scene->min1){
+            if($datas['totDEF'] >= $scene->min1){
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
@@ -229,7 +235,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+                $result = $probability->checkProbWithStats($datas['totDEF'], $scene->min1);
 
                 if($result){
                     if($scene->cons1 == "CHEST"){
@@ -254,7 +260,7 @@ class ScenarioController extends Controller
             }
         } 
         else if($scene->req1 == "CHAR"){
-            if($user->userChara->charisma >= $scene->min1){
+            if($datas['totCHAR'] >= $scene->min1){
                 if($scene->cons1 == "CHEST"){
                     return $this->chestCheck($scene, 'response1');
                 }
@@ -272,7 +278,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min1);
+                $result = $probability->checkProbWithStats($datas['totCHAR'], $scene->min1);
 
                 if($result){
                     if($scene->cons1 == "CHEST"){
@@ -298,10 +304,15 @@ class ScenarioController extends Controller
         }
     }
 
-    public function picked2($id){
+    public function picked2(Request $request){
+        $id = $request->id;
         $scene = Scenario::find($id);
 
         $user = auth()->user();
+
+        $bruh = new StatsDataController;
+
+        $datas = $bruh->statsCheck();
 
         if($scene->req2 == "LEVEL"){
             if($user->userChara->level >= $scene->min2){
@@ -347,7 +358,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req2 == "STR"){
-            if($user->userChara->strength >= $scene->min2){
+            if($datas['totSTR'] >= $scene->min2){
                 if($scene->cons2 == "CHEST"){
                     return $this->chestCheck($scene, 'response2');
                 }
@@ -365,7 +376,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+                $result = $probability->checkProbWithStats($datas['totSTR'], $scene->min2);
 
                 if($result){
                     if($scene->cons2 == "CHEST"){
@@ -390,7 +401,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req2 == "DEX"){
-            if($user->userChara->dexterity >= $scene->min2){
+            if($datas['totDEX'] >= $scene->min2){
                 if($scene->cons2 == "CHEST"){
                     return $this->chestCheck($scene, 'response2');
                 }
@@ -408,7 +419,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+                $result = $probability->checkProbWithStats($datas['totDEX'], $scene->min2);
 
                 if($result){
                     if($scene->cons2 == "CHEST"){
@@ -433,7 +444,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req2 == "INT"){
-            if($user->userChara->intelligence >= $scene->min2){
+            if($datas['totINT'] >= $scene->min2){
                 if($scene->cons2 == "CHEST"){
                     return $this->chestCheck($scene, 'response2');
                 }
@@ -451,7 +462,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+                $result = $probability->checkProbWithStats($datas['totINT'], $scene->min2);
 
                 if($result){
                     if($scene->cons2 == "CHEST"){
@@ -476,7 +487,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req2 == "DEF"){
-            if($user->userChara->defense >= $scene->min2){
+            if($datas['totDEF'] >= $scene->min2){
                 if($scene->cons2 == "CHEST"){
                     return $this->chestCheck($scene, 'response2');
                 }
@@ -494,7 +505,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+                $result = $probability->checkProbWithStats($datas['totDEF'], $scene->min2);
 
                 if($result){
                     if($scene->cons2 == "CHEST"){
@@ -519,7 +530,7 @@ class ScenarioController extends Controller
             }
         } 
         else if($scene->req2 == "CHAR"){
-            if($user->userChara->charisma >= $scene->min2){
+            if($datas['totCHAR'] >= $scene->min2){
                 if($scene->cons2 == "CHEST"){
                     return $this->chestCheck($scene, 'response2');
                 }
@@ -537,7 +548,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min2);
+                $result = $probability->checkProbWithStats($datas['totCHAR'], $scene->min2);
 
                 if($result){
                     if($scene->cons2 == "CHEST"){
@@ -563,10 +574,14 @@ class ScenarioController extends Controller
         }
     }
 
-    public function picked3($id){
+    public function picked3(Request $request){
+        $id = $request->id;
         $scene = Scenario::find($id);
 
         $user = auth()->user();
+        $bruh = new StatsDataController;
+
+        $datas = $bruh->statsCheck();
 
         if($scene->req3 == "LEVEL"){
             if($user->userChara->level >= $scene->min3){
@@ -612,7 +627,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req3 == "STR"){
-            if($user->userChara->strength >= $scene->min3){
+            if($datas['totSTR'] >= $scene->min3){
                 if($scene->cons3 == "CHEST"){
                     return $this->chestCheck($scene, 'response3');
                 }
@@ -630,7 +645,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+                $result = $probability->checkProbWithStats($datas['totSTR'], $scene->min3);
 
                 if($result){
                     if($scene->cons3 == "CHEST"){
@@ -655,7 +670,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req3 == "DEX"){
-            if($user->userChara->dexterity >= $scene->min3){
+            if($datas['totDEX'] >= $scene->min3){
                 if($scene->cons3 == "CHEST"){
                     return $this->chestCheck($scene, 'response3');
                 }
@@ -673,7 +688,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+                $result = $probability->checkProbWithStats($datas['totDEX'], $scene->min3);
 
                 if($result){
                     if($scene->cons3 == "CHEST"){
@@ -698,7 +713,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req3 == "INT"){
-            if($user->userChara->intelligence >= $scene->min3){
+            if($datas['totINT'] >= $scene->min3){
                 if($scene->cons3 == "CHEST"){
                     return $this->chestCheck($scene, 'response3');
                 }
@@ -716,7 +731,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+                $result = $probability->checkProbWithStats($datas['totINT'], $scene->min3);
 
                 if($result){
                     if($scene->cons3 == "CHEST"){
@@ -741,7 +756,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req3 == "DEF"){
-            if($user->userChara->defense >= $scene->min3){
+            if($datas['totDEF'] >= $scene->min3){
                 if($scene->cons3 == "CHEST"){
                     return $this->chestCheck($scene, 'response3');
                 }
@@ -759,7 +774,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+                $result = $probability->checkProbWithStats($datas['totDEF'], $scene->min3);
 
                 if($result){
                     if($scene->cons3 == "CHEST"){
@@ -784,7 +799,7 @@ class ScenarioController extends Controller
             }
         } 
         else if($scene->req3 == "CHAR"){
-            if($user->userChara->charisma >= $scene->min3){
+            if($datas['totCHAR'] >= $scene->min3){
                 if($scene->cons3 == "CHEST"){
                     return $this->chestCheck($scene, 'response3');
                 }
@@ -802,7 +817,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min3);
+                $result = $probability->checkProbWithStats($datas['totCHAR'], $scene->min3);
 
                 if($result){
                     if($scene->cons3 == "CHEST"){
@@ -828,10 +843,15 @@ class ScenarioController extends Controller
         }
     }
 
-    public function picked4($id){
+    public function picked4(Request $request){
+        $id = $request->id;
         $scene = Scenario::find($id);
 
         $user = auth()->user();
+
+        $bruh = new StatsDataController;
+
+        $datas = $bruh->statsCheck();
 
         if($scene->req4 == "LEVEL"){
             if($user->userChara->level >= $scene->min4){
@@ -877,7 +897,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req4 == "STR"){
-            if($user->userChara->strength >= $scene->min4){
+            if($datas['totSTR'] >= $scene->min4){
                 if($scene->cons4 == "CHEST"){
                     return $this->chestCheck($scene, 'response4');
                 }
@@ -895,7 +915,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+                $result = $probability->checkProbWithStats($datas['totSTR'], $scene->min4);
 
                 if($result){
                     if($scene->cons4 == "CHEST"){
@@ -920,7 +940,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req4 == "DEX"){
-            if($user->userChara->dexterity >= $scene->min4){
+            if($datas['totDEX'] >= $scene->min4){
                 if($scene->cons4 == "CHEST"){
                     return $this->chestCheck($scene, 'response4');
                 }
@@ -938,7 +958,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+                $result = $probability->checkProbWithStats($datas['totDEX'], $scene->min4);
 
                 if($result){
                     if($scene->cons4 == "CHEST"){
@@ -963,7 +983,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req4 == "INT"){
-            if($user->userChara->intelligence >= $scene->min4){
+            if($datas['totINT'] >= $scene->min4){
                 if($scene->cons4 == "CHEST"){
                     return $this->chestCheck($scene, 'response4');
                 }
@@ -981,7 +1001,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+                $result = $probability->checkProbWithStats($datas['totINT'], $scene->min4);
 
                 if($result){
                     if($scene->cons4 == "CHEST"){
@@ -1006,7 +1026,7 @@ class ScenarioController extends Controller
             }
         }
         else if($scene->req4 == "DEF"){
-            if($user->userChara->defense >= $scene->min4){
+            if($datas['totDEF'] >= $scene->min4){
                 if($scene->cons4 == "CHEST"){
                     return $this->chestCheck($scene, 'response4');
                 }
@@ -1024,7 +1044,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+                $result = $probability->checkProbWithStats($datas['totDEF'], $scene->min4);
 
                 if($result){
                     if($scene->cons4 == "CHEST"){
@@ -1049,7 +1069,7 @@ class ScenarioController extends Controller
             }
         } 
         else if($scene->req4 == "CHAR"){
-            if($user->userChara->charisma >= $scene->min4){
+            if($datas['totCHAR'] >= $scene->min4){
                 if($scene->cons4 == "CHEST"){
                     return $this->chestCheck($scene, 'response4');
                 }
@@ -1067,7 +1087,7 @@ class ScenarioController extends Controller
                 }
             }else{
                 $probability = new ProbabilityController;
-                $result = $probability->checkProbWithStats($user->level, $scene->min4);
+                $result = $probability->checkProbWithStats($datas['totCHAR'], $scene->min4);
 
                 if($result){
                     if($scene->cons4 == "CHEST"){
@@ -1110,13 +1130,20 @@ class ScenarioController extends Controller
             ]);
         
             $charaInventoryData = auth()->user()->userChara->inventory;
+
+            $img_data = [];
+
+            foreach($charaInventoryData as $data){
+                array_push($img_data, ['id' => $data->id, 'url' => $data->DataItem->media->first()->getUrl()]);
+            }
+
         
             return response()->json([
                 'success' => true,
                 'type' => 'CHEST',
-                'inventory_data' => $charaInventoryData,
+                'inventory_data' => $img_data,
                 'response' => $scene->$response,
-                'response_eff' => 'You Got '. $item->name .' <img src="'. $item->media->first->getUrl() . '" >'
+                'response_eff' => 'You Got '. $item->name .' <img src="'. $item->media->first()->getUrl() . '" >'
             ]);
     }
 
@@ -1156,6 +1183,11 @@ class ScenarioController extends Controller
         ]);
 
         if($newHp <= 0){
+
+            $status = $userChara->update([
+                'status' => 'DEATH'
+            ]);
+
             return response()->json([
                 'success' => true,
                 'type' => 'DEATH',
@@ -1168,6 +1200,8 @@ class ScenarioController extends Controller
             'success' => true,
             'type' => 'HEALTH',
             'getType' => $type,
+            'current_hp' => $userChara->current_health,
+            'max_hp'=> $userChara->max_health,
             'response' => $scene->$response,
             'response_eff' => 'Your Hp '. $scene->$eff
         ]);
@@ -1175,13 +1209,9 @@ class ScenarioController extends Controller
 
     public function manaCheck($scene, $eff, $response){
         $userChara = auth()->user()->userChara;
-
         $mana = $userChara->current_mana;
-
         $newMana = $mana + $scene->$eff;
-
         $type = "GAIN";
-
         if($scene->$eff < 0 ){
             $type = "LOSS";
         }
@@ -1198,6 +1228,8 @@ class ScenarioController extends Controller
             'success' => true,
             'type' => 'MANA',
             'getType' => $type,
+            'current_mana' => $userChara->current_mana,
+            'max_mana'=> $userChara->max_mana,
             'response' => $scene->$response,
             'response_eff' => 'Your Mana '. $scene->$eff
         ]);
@@ -1206,6 +1238,8 @@ class ScenarioController extends Controller
 
     public function expCheck($scene, $eff, $response){
         $userChara = auth()->user()->userChara;
+
+        $sxps = $scene->$eff;
 
         $exp = $userChara->exp_count;
 
@@ -1250,7 +1284,9 @@ class ScenarioController extends Controller
                 'type' => 'LVUP',
                 'response' => $scene->$response,
                 'response_eff' => 'You have been Level Up By One!',
-                'data' => $stats 
+                'data' => $stats,
+                'current_hp' => $userChara->current_hp,
+                'current_mana' => $userChara->current_mana
             ]);
         }
 
@@ -1262,7 +1298,7 @@ class ScenarioController extends Controller
             'success' => true,
             'type' => 'EXP',
             'response' => $scene->$response,
-            'response_eff' => 'You get '. $scene->eff .' Exp' 
+            'response_eff' => "You get $sxps Exp" 
         ]);
     }
 
@@ -1278,14 +1314,19 @@ class ScenarioController extends Controller
 
         $charaInventoryData = auth()->user()->userChara->inventory;
 
-        return response()->json([
-                'success' => true,
-                'type' => 'CHEST',
-                'inventory_data' => $charaInventoryData,
-                'response' => $scene->$response,
-                'response_eff' => 'You Got '. $check->name .' <img src="'. $check->media->first->getUrl() . '" >'
-            ]);
+        $img_data = [];
+
+        foreach($charaInventoryData as $data){
+            $img_data[$data->id] = $data->media->first()->getUrl();
         }
 
+        return response()->json([
+                'success' => true,
+                'type' => 'ITEM',
+                'inventory_data' => $img_data,
+                'response' => $scene->$response,
+                'response_eff' => 'You Got '. $check->name .' <img src="'. $check->media->first()->getUrl() . '" >'
+            ]);
+        }
     }
 }
